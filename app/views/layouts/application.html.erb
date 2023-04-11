@@ -12,8 +12,8 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+      <%= navbar_if_signed_in %>
       <%= yield %>
-    </main>
   </body>
+  <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </html>
