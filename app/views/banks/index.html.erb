@@ -1,9 +1,12 @@
-<div class="py-2">
-  <%= render 'form', bank: @bank %>
-</div>
+<div class="bank__container">
 
-<div id="banks" class="py-5">
-  <% @banks.each do |bank| %>
-    <%= render 'bank', bank: bank %>
-  <% end %>
+  <div class="py-2">
+    <%= render 'form', bank: @bank %>
+  </div>
+
+  <div id="banks" class="py-5">
+    <% @banks.each do |bank| %>
+      <%= render 'bank', bank: bank %>
+    <% end %>
+  </div>
 </div>
