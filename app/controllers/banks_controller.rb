@@ -1,5 +1,6 @@
 class BanksController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_bank, only: %i[show update edit]
 
   def index
     @bank = Bank.new
@@ -22,7 +23,20 @@ class BanksController < ApplicationController
 
   end
 
+  def update
+    streams = []
+    if @bank.update(bank_params)
+    else
+    end
+
+    render turbo_stream: streams
+  end
+
   private
+
+  def set_bank
+    @bank = Bank.find(params[:id])
+  end
 
   def bank_params
     params.require(:bank).permit(:name)

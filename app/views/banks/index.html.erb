@@ -2,12 +2,6 @@
   <%= render 'form', bank: @bank %>
 </div>
 
-<!--<div id="banks">-->
-  <%# @banks.each do |bank| %>
-    <%#= render 'bank', bank: bank %>
-  <%# end %>
-<!--</div>-->
-
-<%= turbo_frame_tag 'banks' do %>
+<div id="banks">
   <%= render @banks %>
-<% end %>
+</div>
