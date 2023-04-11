@@ -84,5 +84,34 @@ RSpec.describe "Banks", type: :request do
     end
   end
 
+
+  describe 'PATCH /banks/:id' do
+    context 'when user is authenticated' do
+      let(:user) { create(:user) }
+      let(:bank) { create(:bank, user:) }
+      before do
+        sign_in user
+      end
+
+      context 'with valid params' do
+        it 'updates the bank' do
+          old_title = bank.title
+
+          patch banks_path(bank), params: { bank: { name: 'Updated Title' } }
+          expect(bank.reload.title).to eq('Updated Title')
+          expect(bank.reload.title).not_to eq(old_title)
+        end
+      end
+
+      context 'with invalid params' do
+        it 'renders the error message' do
+          patch bank_path(bank), params: { bank: { title: '' } }
+
+          expect(response.body).to include('error_message')
+          expect(response.body).to include('Title can&#39;t be blank')
+        end
+      end
+    end
+  end
 end
 
