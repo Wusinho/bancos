@@ -1,4 +1,5 @@
 <div>
-  <%= @welcome %>
-  <%#= render 'devise/sessions/form' %>
+  <%= @welcome  %> <%= current_user.email %>
 </div>
+
+<%= link_to 'Check your bank', banks_path %>
