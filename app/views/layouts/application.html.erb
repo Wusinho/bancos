@@ -13,6 +13,7 @@
 
   <body>
       <%= navbar_if_signed_in %>
+      <%= turbo_frame_tag 'error_message' %>
       <%= yield %>
   </body>
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>

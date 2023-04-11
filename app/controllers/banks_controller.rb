@@ -1,4 +1,6 @@
 class BanksController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @bank = Bank.new
     @banks = current_user.banks
@@ -14,6 +16,8 @@ class BanksController < ApplicationController
 
       render turbo_stream: streams
     else
+      render turbo_stream: turbo_stream.replace('error_message', partial: 'shared/error_message',
+                                                locals: { message: @bank.errors.full_messages.to_sentence })
     end
 
   end

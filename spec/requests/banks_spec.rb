@@ -67,6 +67,20 @@ RSpec.describe "Banks", type: :request do
         expect(response.body).to include('replace', 'bank_form')
       end
 
+      it 'renders the error message when it does not pass validations' do
+        post banks_path, params: { bank: { title: 'a' } }
+
+        expect(response.body).to include('error_message','Name can&#39;t be blank and Name is too short (minimum is 3 characters)')
+      end
+    end
+
+    context 'when user is not signed in' do
+      let(:bank_params) { FactoryBot.attributes_for(:bank) }
+
+      it 'redirects to sign in page' do
+        post banks_path, params: { bank: bank_params }
+        expect(response).to redirect_to(new_user_session_path)
+      end
     end
   end
 
