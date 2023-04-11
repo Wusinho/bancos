@@ -1,7 +1,9 @@
-<div>
+<div class="py-2">
   <%= render 'form', bank: @bank %>
 </div>
 
-<div id="banks">
-  <%= render @banks %>
+<div id="banks" class="py-5">
+  <% @banks.each do |bank| %>
+    <%= render 'bank', bank: bank %>
+  <% end %>
 </div>

@@ -4,5 +4,9 @@
     <%= f.text_field :name %>
   </div>
 
-  <%= f.submit 'Create Bank', class: blue_btn %>
+  <% if bank.persisted? %>
+    <%= f.submit 'Update Bank', class: blue_btn %>
+  <% else %>
+    <%= f.submit 'Create Bank', class: blue_btn %>
+  <% end %>
 <% end %>

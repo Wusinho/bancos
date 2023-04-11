@@ -26,10 +26,11 @@ class BanksController < ApplicationController
   def update
     streams = []
     if @bank.update(bank_params)
+      redirect_to banks_path
     else
     end
 
-    render turbo_stream: streams
+    # render turbo_stream: streams
   end
 
   private
