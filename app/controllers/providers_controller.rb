@@ -2,6 +2,7 @@ class ProvidersController < ApplicationController
   before_action :set_provider, only: [:show]
   def index
     @provider = Provider.new
+    @provider.banks.build
     @providers = current_user.providers
   end
 
@@ -11,15 +12,16 @@ class ProvidersController < ApplicationController
 
   def create
     @provider = current_user.providers.build(provider_params)
-    debugger
+
     if @provider.save
+      provider = Provider.new
+      provider.banks.build
       streams = []
       streams << turbo_stream.prepend('providers', partial: 'providers/provider', locals: { provider: @provider })
-      streams << turbo_stream.replace('provider_form', partial: 'providers/form', locals: { provider: Provider.new})
+      streams << turbo_stream.replace('provider_form', partial: 'providers/form', locals: { provider: provider } )
       streams << turbo_stream.replace('message', partial: 'shared/message', locals: { message: "#{@provider.name} created"})
       render turbo_stream: streams
     else
-      # turbo_error_message(@provider)
       render turbo_stream: turbo_stream.replace('error_message', partial: 'shared/error_message',
                                                 locals: { message: @provider.errors.full_messages.to_sentence })
     end
@@ -34,7 +36,6 @@ class ProvidersController < ApplicationController
   end
 
   def provider_params
-    params.require(:provider).permit(:name, :nit, :contact_name, :phone,
-                                     banks_attributes: [:account, :name])
+    params.require(:provider).permit(:name, :nit, :contact_name, :phone, banks_attributes: [:account, :name])
   end
 end

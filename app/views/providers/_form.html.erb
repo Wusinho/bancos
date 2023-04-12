@@ -19,13 +19,13 @@
     <%= f.text_field :phone, maxlength: 10, minLength: 9 %>
   </div>
 
-  <%= f.fields_for Bank.new do |bank_form| %>
+  <%= f.fields_for :banks do |bank_form| %>
     <div class="nested-fields">
       <%= bank_form.label :name %>
       <%= bank_form.text_field :name %>
 
       <%= bank_form.label :account %>
-      <%= bank_form.text_field :account %>
+      <%= bank_form.text_field :account, :maxlength => 15, minLength: 15  %>
 
     </div>
   <% end %>
