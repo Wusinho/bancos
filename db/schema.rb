@@ -30,10 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_12_043606) do
     t.string "contact_name", null: false
     t.string "phone", null: false
     t.uuid "user_id", null: false
-    t.uuid "bank_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bank_id"], name: "index_providers_on_bank_id"
     t.index ["user_id"], name: "index_providers_on_user_id"
   end
 
@@ -50,6 +48,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_12_043606) do
   end
 
   add_foreign_key "banks", "providers"
-  add_foreign_key "providers", "banks"
   add_foreign_key "providers", "users"
 end

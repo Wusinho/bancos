@@ -5,7 +5,6 @@ RSpec.describe Provider, type: :model do
     context 'Provider associations' do
       it do
         should belong_to(:user)
-        should belong_to(:bank)
       end
     end
     context 'validations' do

@@ -5,6 +5,5 @@ FactoryBot.define do
     contact_name { Faker::Name.name  }
     phone { Faker::PhoneNumber.subscriber_number(length: 9) }
     user
-    bank
   end
 end
