@@ -12,7 +12,7 @@ RSpec.describe "Providers", type: :request do
     context "when user is signed in" do
       let!(:provider1) { create :provider }
       let!(:provider2) { create :provider }
-      let!(:provider3) { create :provider, user: :user2 }
+      let!(:provider3) { create :provider, user: user2 }
 
       before do
         sign_in user
