@@ -6,4 +6,5 @@ class Provider < ApplicationRecord
   validates :nit, presence: true, length: { minimum: 9, maximum: 11 },
             format: { with: /\A\d{9}-?\d?\z/, message: "must have correct format" }
   validates :phone, length: { minimum: 9, maximum: 10 }
+  accepts_nested_attributes_for :banks, allow_destroy: true
 end

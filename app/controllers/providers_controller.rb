@@ -1,7 +1,12 @@
 class ProvidersController < ApplicationController
+  before_action :set_provider, only: [:show]
   def index
     @provider = Provider.new
     @providers = current_user.providers
+  end
+
+  def show
+
   end
 
   def create
@@ -24,7 +29,12 @@ class ProvidersController < ApplicationController
 
   private
 
+  def set_provider
+    @provider = Provider.find(params[:id])
+  end
+
   def provider_params
-    params.require(:provider).permit(:name, :nit, :contact_name, :phone)
+    params.require(:provider).permit(:name, :nit, :contact_name, :phone,
+                                     banks_attributes: [:account, :name])
   end
 end
