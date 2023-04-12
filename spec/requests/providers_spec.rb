@@ -70,27 +70,34 @@ RSpec.describe "Providers", type: :request do
       end
 
       it 'renders the error message when no name' do
-        post providers_path, params: { provider: { name: '', nit: provider_params[:nit]  } }
-        p response.body
+        provider_params[:name] = ''
+        post providers_path, params: { provider: provider_params }
 
-        expect(response.body).to include('error_message','Name is too short (minimum is 3 characters)')
+        expect(response.body).to include('error_message',"Name can&#39;t be blank")
       end
 
       it 'renders the error message when nit number is  not 9 digits' do
-        post providers_path, params: { provider: { name: provider_params[:name], nit: '123' } }
-
-        # expect(response.body).to include('error_message','nit is the wrong length (should be 15 characters)')
-      end
-    end
-
-    context 'when user is not signed in' do
-      let(:provider_params) { FactoryBot.attributes_for(:provider) }
-
-      it 'redirects to sign in page' do
+        provider_params[:nit] = 123
         post providers_path, params: { provider: provider_params }
-        expect(response).to redirect_to(new_user_session_path)
+
+        expect(response.body).to include('error_message','Nit is too short (minimum is 9 characters) and Nit must have correct format')
+      end
+
+      it 'renders the error message when nit number is  wrong format' do
+        provider_params[:nit] = '123456789*1'
+        post providers_path, params: { provider: provider_params }
+
+        expect(response.body).to include('error_message','Nit must have correct format')
+      end
+
+      it 'renders the error message when phone number do not pass validations' do
+        provider_params[:phone] = '123456789234561'
+        post providers_path, params: { provider: provider_params }
+
+        expect(response.body).to include('error_message','Phone is too long (maximum is 10 characters)')
       end
     end
+
   end
 
 end

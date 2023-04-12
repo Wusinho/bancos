@@ -14,7 +14,9 @@ class ProvidersController < ApplicationController
       streams << turbo_stream.replace('message', partial: 'shared/message', locals: { message: "#{@provider.name} created"})
       render turbo_stream: streams
     else
-      render turbo_streams: turbo_error_message(@provider)
+      # turbo_error_message(@provider)
+      render turbo_stream: turbo_stream.replace('error_message', partial: 'shared/error_message',
+                                                locals: { message: @provider.errors.full_messages.to_sentence })
     end
 
 
