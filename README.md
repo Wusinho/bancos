@@ -26,7 +26,7 @@ Criterios de Aceptacion
 - Si trato de entrar con un correo o password incorrecto el sistema me debe alertar.
 
 
-### [REQ-01](https://github.com/Wusinho/proyecto_notas/tree/dev-historia_2)
+### [REQ-01](https://github.com/Wusinho/bancos/tree/dev-req_01)
 The user can view all notes, sort them by topic, title, or date, and open a specific note.
 
 

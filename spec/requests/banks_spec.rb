@@ -67,10 +67,16 @@ RSpec.describe "Banks", type: :request do
         expect(response.body).to include('replace', 'bank_form')
       end
 
-      it 'renders the error message when it does not pass validations' do
-        post banks_path, params: { bank: { title: 'a' } }
+      it 'renders the error message when name is too short' do
+        post banks_path, params: { bank: { name: 'a', account: bank_params[:account]  } }
 
-        expect(response.body).to include('error_message','Name can&#39;t be blank and Name is too short (minimum is 3 characters)')
+        expect(response.body).to include('error_message','Name is too short (minimum is 3 characters)')
+      end
+
+      it 'renders the error message when account number is  not 15 digits' do
+        post banks_path, params: { bank: { name: bank_params[:name], account: '123' } }
+
+        expect(response.body).to include('error_message','Account is the wrong length (should be 15 characters)')
       end
     end
 
