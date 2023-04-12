@@ -4,7 +4,7 @@ class BanksController < ApplicationController
 
   def index
     @bank = Bank.new
-    @banks = current_user.banks
+    @banks = current_user.own_banks
   end
 
   def create

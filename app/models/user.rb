@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :providers
+
+  def own_banks
+    Bank.where({provider: providers})
+  end
 end

@@ -11,7 +11,7 @@ class ProvidersController < ApplicationController
 
   def create
     @provider = current_user.providers.build(provider_params)
-
+    debugger
     if @provider.save
       streams = []
       streams << turbo_stream.prepend('providers', partial: 'providers/provider', locals: { provider: @provider })
