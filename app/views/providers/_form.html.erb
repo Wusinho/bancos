@@ -1,0 +1,40 @@
+<%= form_with model: provider, id: "provider_form" do |f| %>
+  <h4>Add Provider</h4>
+  <div class="pt-4">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="pt-4">
+    <%= f.label :contact_name %>
+    <%= f.text_field :contact_name %>
+  </div>
+
+  <div class="pt-4">
+    <%= f.label :nit %>
+    <%= f.text_field :nit, maxlength: 11, minLength: 9 %>
+  </div>
+
+  <div class="pt-4">
+    <%= f.label :phone %>
+    <%= f.text_field :phone, maxlength: 10, minLength: 9 %>
+  </div>
+
+  <div class="p-4">
+    <%= f.fields_for :banks do |bank_form| %>
+      <h4>Bank</h4>
+      <div class="nested-fields">
+        <%= bank_form.label :name %>
+        <%= bank_form.text_field :name %>
+
+        <%= bank_form.label :account %>
+        <%= bank_form.text_field :account, :maxlength => 15, minLength: 15  %>
+
+        <%= bank_form.check_box :_destroy %>
+        <%= bank_form.label :_destroy, "Don't Add" %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= f.submit 'Create Provider', class: blue_btn %>
+<% end %>

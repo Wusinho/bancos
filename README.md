@@ -26,8 +26,44 @@ Criterios de Aceptacion
 - Si trato de entrar con un correo o password incorrecto el sistema me debe alertar.
 
 
-### [REQ-01](https://github.com/Wusinho/proyecto_notas/tree/dev-historia_2)
-The user can view all notes, sort them by topic, title, or date, and open a specific note.
+### [REQ-01](https://github.com/Wusinho/bancos/tree/dev-req_01)
+Como un usuario cualquiera debo tener la capacidad de crear, leer, actualizar y eliminar bancos. Adicionalmente debo contar con una vista donde pueda ver la lista de todos los bancos que han sido creados.
+Criterios de aceptación:
+- El registro de los bancos solo debe contener un campo para el nombre del banco de tipo string con máximo 50 caracteres.
+- Criterios técnicos
+Hacer la validación por modelo
+- Haga uso de I18N para todos los textos que presente aunque solo presente la información en un único idioma.
+
+
+### [REQ-02](https://github.com/Wusinho/bancos/tree/dev-req_02)
+Como un usuario cualquiera debo tener la capacidad de registrar en una misma vista la información del proveedor y de su 
+cuenta bancaria, con el objetivo de poder almacenar rápidamente la información de dicho proveedor para posteriores consultas.
+
+Los datos que debe tener el proveedor son los siguientes:
+- Nombre del proveedor.
+- NIT del proveedor. (ID)
+- Nombre de la persona de contactato.
+- Número de celular de la persona de contacto.
+- 
+Los datos que deben presentarse relacionados con el banco banco son los siguientes:
+- Nombre del banco.
+- Número de cuenta bancaria.
+
+Criterios de aceptación:
+- Si al realizar el registro me hace falta uno o más campos obligatorios, el sistema me debe indicar que campos me hacen falta por llenar.
+- Si al realizar el registro algún campo no cumple con las características indicadas para los campos en criterios técnicos, el sistema me debe indicar los cambios que debo realizar.
+- Si el registro se realizó correctamente el sistema me debe indicar que la información se lleno de forma correcta.
+- Para los bancos, en el formulario se debe presentar el nombre de los bancos existentes en un combobox.
+
+Criterios técnicos:
+- Hacer las validaciones por módelo, no por vista.
+- Nombre del proveedor debe ser tipo string obligatorio.
+- NIT del proveedor debe ser tipo string y seguir la estructura 9 dígitos un guión medio (-) y un dígito opcional. Ej de un número válido: 901362343-4. Se debe usar una expresión regular para su definición.
+- Nombre de la persona de contactato debe ser un string obligatorio.
+- Número de celular de la persona de contacto debe ser un string de màximo 10 caracteres opcional.
+- Nombre del banco del proveedor string obligatorio.
+- Número de cuenta bancaria string opcional màximo 15 caracteres.
+- Haga uso de I18N para todos los textos que presente aunque solo presente la información en un único idioma.
 
 
 ## Built With

@@ -4,7 +4,7 @@ class BanksController < ApplicationController
 
   def index
     @bank = Bank.new
-    @banks = current_user.banks
+    @banks = current_user.own_banks
   end
 
   def create
@@ -48,7 +48,7 @@ class BanksController < ApplicationController
   end
 
   def bank_params
-    params.require(:bank).permit(:name)
+    params.require(:bank).permit(:name, :account)
   end
 
 end

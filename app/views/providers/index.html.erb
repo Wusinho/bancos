@@ -1,0 +1,9 @@
+<div>
+  <%= render 'form', provider: @provider %>
+</div>
+
+<div id='providers' class="mt-8">
+  <% @providers.each do |provider| %>
+    <%= render 'provider', provider: provider %>
+  <% end %>
+</div>
