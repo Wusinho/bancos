@@ -40,6 +40,22 @@ RSpec.describe "Providers", type: :request do
     context 'when user is logged in' do
       let(:provider_params) { FactoryBot.attributes_for(:provider) }
 
+      let(:valid_params) do
+        {
+          provider: {
+            name: "Provider Name",
+            contact_name: "Contact Name",
+            nit: "123456789",
+            phone: "123456789",
+            user_id: user.id,
+            banks_attributes: {
+              "0": { name: "Bank 1", account: "123456789123456" },
+              "1": { name: "Bank 2", account: "223456789123456" }
+            }
+          }
+        }
+      end
+
       before do
         sign_in user
       end
@@ -48,6 +64,12 @@ RSpec.describe "Providers", type: :request do
         expect do
           post providers_path, params: { provider: provider_params }
         end.to change(Provider, :count).by(1)
+      end
+
+      it "creates a new Provider with Banks" do
+        expect do
+          post providers_path, params: valid_params
+        end.to change(Provider, :count).by(1).and change(Bank, :count).by(2)
       end
 
       it 'returns a successful response' do
@@ -97,7 +119,5 @@ RSpec.describe "Providers", type: :request do
         expect(response.body).to include('error_message','Phone is too long (maximum is 10 characters)')
       end
     end
-
   end
-
 end
