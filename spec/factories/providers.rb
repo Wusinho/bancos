@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :provider do
-    name { "MyString" }
-    nit { "MyString" }
-    contact_name { "MyString" }
-    phone { "MyString" }
-    user { nil }
-    bank { nil }
+    name { Faker::Company.name }
+    nit { "901362343-4" }
+    contact_name { Faker::Name.name  }
+    phone { Faker::PhoneNumber.subscriber_number(length: 9) }
+    user
+    bank
   end
 end
