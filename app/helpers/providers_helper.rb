@@ -15,11 +15,14 @@ module ProvidersHelper
     end
   end
 
-  def div_tag(tag, css, name, provider = 'Sin información en la tabla')
+  def div_tag(tag, css, name, provider )
     content_tag(tag, '', class: css ) do
-      "#{name}: #{provider}"
+      "#{name}: #{default_message(provider)}"
     end
+  end
 
+  def default_message(provider)
+    provider.blank? ? 'Sin información en la tabla' : provider
   end
 
 end

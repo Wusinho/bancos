@@ -15,7 +15,7 @@ users.each do |user|
       name: Faker::Company.name,
       nit: Faker::PhoneNumber.subscriber_number(length: 9),
       contact_name: Faker::Name.name,
-      phone: Faker::PhoneNumber.subscriber_number(length: 9),
+      phone: [true,false].sample ? Faker::PhoneNumber.subscriber_number(length: 9) : '',
       user_id: user.id
     )
     if [true, false].sample
