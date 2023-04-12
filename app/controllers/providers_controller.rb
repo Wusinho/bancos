@@ -36,6 +36,6 @@ class ProvidersController < ApplicationController
   end
 
   def provider_params
-    params.require(:provider).permit(:name, :nit, :contact_name, :phone, banks_attributes: [:account, :name])
+    params.require(:provider).permit(:name, :nit, :contact_name, :phone, banks_attributes: [:account, :name, :_destroy])
   end
 end
