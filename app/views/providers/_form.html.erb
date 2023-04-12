@@ -1,0 +1,23 @@
+<%= form_with model: provider, id: "bank_form" do |f| %>
+  <div class="mb-3">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :contact_name %>
+    <%= f.text_field :contact_name %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :nit %>
+    <%= f.text_field :nit, maxlength: 11, minLength: 9 %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :phone %>
+    <%= f.text_field :phone, maxlength: 10, minLength: 9 %>
+  </div>
+
+  <%= f.submit 'Create Provider' %>
+<% end %>

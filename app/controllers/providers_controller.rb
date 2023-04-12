@@ -1,6 +1,7 @@
 class ProvidersController < ApplicationController
   def index
-    @providers = current_user.providers.preload(:banks)
+    @provider = Provider.new
+    @providers = current_user.providers
   end
 
   def create
@@ -13,7 +14,7 @@ class ProvidersController < ApplicationController
       streams << turbo_stream.replace('message', partial: 'shared/message', locals: { message: "#{@provider.name} created"})
       render turbo_stream: streams
     else
-      render turbo_streams: turbo_error_message(instance)
+      render turbo_streams: turbo_error_message(@provider)
     end
 
 
