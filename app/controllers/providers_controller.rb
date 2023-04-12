@@ -3,7 +3,7 @@ class ProvidersController < ApplicationController
   def index
     @provider = Provider.new
     @provider.banks.build
-    @providers = current_user.providers
+    @providers = current_user.providers.paginate(page: params[:page], per_page: 10)
   end
 
   def show
