@@ -1,8 +1,8 @@
 module ProvidersHelper
-  def provider_card(provider)
-    content_tag :div, class: "max-w-sm rounded overflow-hidden shadow-lg mb-2" do
+  def provider_index_card(provider)
+    content_tag :div, class: "max-w-sm rounded overflow-hidden shadow-lg mb-2 p-4" do
       content_tag :div, class: "px-6 py-4" do
-        concat div_tag(:div,"font-bold text-xl mb-2", provider.name)
+        concat link_to(provider.name, provider_path(provider))
         concat content_tag(:div, provider_information_list(provider), class: "flex items-center")
         end
       end
@@ -10,14 +10,14 @@ module ProvidersHelper
 
   def provider_information_list(provider)
     content_tag(:div, class: "text-sm mr-2") do
-      concat div_tag(:div,"text-gray-900 leading-none", provider.contact_name)
-      concat div_tag(:p, "text-gray-600", provider.phone )
+      concat div_tag(:div,"text-gray-600", 'Contact name', provider.contact_name)
+      concat div_tag(:div, "text-gray-600", 'Phone number', provider.phone )
     end
   end
 
-  def div_tag(tag, css, provider = 'Sin información en la tabla')
+  def div_tag(tag, css, name, provider = 'Sin información en la tabla')
     content_tag(tag, '', class: css ) do
-      provider
+      "#{name}: #{provider}"
     end
 
   end
