@@ -38,5 +38,9 @@ module ApplicationHelper
   def edit_btn
     'fa fa-edit px-2'
   end
+
+  def delete_btn
+    "fa-solid fa-trash"
+  end
 end
 

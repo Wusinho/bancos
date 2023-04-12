@@ -1,6 +1,6 @@
 class BanksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_bank, only: %i[show update edit]
+  before_action :set_bank, only: %i[show update edit destroy]
 
   def index
     @bank = Bank.new
@@ -32,6 +32,11 @@ class BanksController < ApplicationController
     end
 
     # render turbo_stream: streams
+  end
+
+  def destroy
+    render turbo_stream: turbo_stream.remove(@bank)
+    @bank.destroy
   end
 
   private
