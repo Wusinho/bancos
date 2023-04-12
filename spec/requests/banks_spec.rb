@@ -84,34 +84,48 @@ RSpec.describe "Banks", type: :request do
     end
   end
 
-
   describe 'PATCH /banks/:id' do
     context 'when user is authenticated' do
-      let(:user) { create(:user) }
-      let(:bank) { create(:bank, user:) }
+      let(:bank) { create(:bank, user: user) }
       before do
         sign_in user
       end
 
       context 'with valid params' do
         it 'updates the bank' do
-          old_title = bank.title
+          old_title = bank.name
 
-          patch banks_path(bank), params: { bank: { name: 'Updated Title' } }
-          expect(bank.reload.title).to eq('Updated Title')
-          expect(bank.reload.title).not_to eq(old_title)
+          patch bank_path(bank), params: { bank: { name: 'Updated Title' } }
+          expect(bank.reload.name).to eq('Updated Title')
+          expect(bank.reload.name).not_to eq(old_title)
         end
       end
 
       context 'with invalid params' do
         it 'renders the error message' do
-          patch bank_path(bank), params: { bank: { title: '' } }
+          put bank_path(bank), params: { bank: { name: '' } }
 
           expect(response.body).to include('error_message')
-          expect(response.body).to include('Title can&#39;t be blank')
+          expect(response.body).to include('Name can&#39;t be blank and Name is too short (minimum is 3 characters')
         end
       end
     end
   end
+
+  describe 'DELETE /banks/:id' do
+    context 'when user is authenticated' do
+      let!(:bank) { create(:bank, user: user) }
+      before do
+        sign_in user
+      end
+      it 'returns a successful response and deletes the bank' do
+        expect {
+          delete bank_path(bank)
+        }.to change(Bank, :count).by(-1)
+        expect(response).to be_successful
+      end
+    end
+  end
+
 end
 

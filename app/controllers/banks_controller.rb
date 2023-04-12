@@ -29,6 +29,8 @@ class BanksController < ApplicationController
     if @bank.update(bank_params)
       redirect_to banks_path
     else
+      render turbo_stream: turbo_stream.replace('error_message', partial: 'shared/error_message',
+                                                locals: { message: @bank.errors.full_messages.to_sentence })
     end
 
     # render turbo_stream: streams
