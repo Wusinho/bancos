@@ -4,7 +4,7 @@ class BanksController < ApplicationController
 
   def index
     @bank = Bank.new
-    @banks = current_user.own_banks
+    @banks = current_user.own_banks.paginate(page: params[:page], per_page: 10)
   end
 
   def create

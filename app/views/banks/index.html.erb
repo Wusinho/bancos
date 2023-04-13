@@ -5,8 +5,8 @@
   </div>
 
   <div id="banks" class="py-5">
-    <% @banks.each do |bank| %>
-      <%= render 'bank', bank: bank %>
-    <% end %>
+    <%= render @banks %>
   </div>
+  <%= will_paginate @banks %>
+
 </div>
