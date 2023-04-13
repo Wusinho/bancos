@@ -13,7 +13,9 @@ module ProvidersHelper
       concat div_tag(:div, default_css_provider_card, 'Contact name', provider.contact_name)
       concat div_tag(:div, default_css_provider_card, 'Phone number', provider.phone )
       if show
-        concat div_tag(:div, default_css_provider_card, 'Phone number', provider.nit )
+        concat div_tag(:div, default_css_provider_card, 'NIT number', provider.nit )
+        concat link_to('Edit', edit_provider_path(provider))
+        concat button_to('Delete',provider_path(provider.id), method: :delete,)
       end
     end
   end
@@ -30,6 +32,14 @@ module ProvidersHelper
 
   def default_css_provider_card
     "text-gray-600"
+  end
+
+  def submit_provider_form(provider)
+    if provider.persisted?
+      button_to('Update Bank', '', class: blue_btn)
+    else
+      button_to('Create Bank', '', class: blue_btn)
+    end
   end
 
 end

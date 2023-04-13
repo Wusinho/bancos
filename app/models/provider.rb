@@ -1,6 +1,6 @@
 class Provider < ApplicationRecord
   belongs_to :user
-  has_many :banks
+  has_many :banks, :dependent => :destroy
   validates :name, presence: true
   validates_presence_of :contact_name
   validates :nit, presence: true, length: { minimum: 9, maximum: 11 },
