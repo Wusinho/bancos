@@ -30,6 +30,23 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  devise:
+    failure:
+      user:
+        invalid: "Correo o contraseña incorrectos."
+  errors:
+    messages:
+      not_saved: "No se pudo guardar el registro."
+    activerecord:
+      errors:
+        models:
+          user:
+            attributes:
+              email:
+                blank: "El correo no puede estar vacío."
+              password:
+                blank: "La contraseña no puede estar vacía."
+
   homepage:
     total_proveedores: 'Total de Proveedores %{proveedores}'
     total_bancos: 'Total de bancos %{bancos}'
@@ -58,24 +75,37 @@ es:
     link_bancos: 'Ver los Bancos'
     formulario:
       proveedor: 'Seleccionar proveedor'
+
   activerecord:
     models:
       provider: 'Proveedor'
+      bank: 'Banco'
+      user: 'Usuario'
     attributes:
       provider:
-        name: 'Nombre'
+        name: 'Nombre de Proveedor'
         contact_name: 'Nombre de Contacto'
-      bank: 'Banco'
-      attributes:
-        bank:
-          name: 'Nombre'
+        nit: 'NIT'
+        phone: 'Telefono'
+      bank:
+        name: 'Nombre del Banco'
+        account: 'Numero de Cuenta'
     errors:
-      messages:
-        record_invalid: '%{errors}'
-  errors:
-    format: '%{attribute}, %{message}'
-    messages:
-      blank: "no puede estar vacio"
-      name:
-        lenght:
-          short: 'No puede ser tan corto'
+      models:
+        bank:
+          attributes:
+            name:
+              blank: "no puede estar vacío"
+              too_short: "es demasiado corto"
+        provider:
+          attributes:
+            name:
+              blank: "no puede estar vacío"
+            contact_name:
+              blank: "no puede estar vacío"
+            nit:
+              blank: "El NIT no puede estar vacío"
+              too_short: "El NIT es demasiado corto"
+              invalid: "El NIT debe tener el formato correcto"
+
+
