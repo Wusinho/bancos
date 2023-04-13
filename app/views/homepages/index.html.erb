@@ -1,13 +1,13 @@
-<div class="p-8">
+<div class="p-8 homepage__card">
   <div>
-    <h4>Total Provider :</h4>
-    <p><%= @provider_size  %></p>
+    <h4><%= t(:total_proveedores, proveedores: @provider_size,
+              scope: [:homepage]) %></h4>
   </div>
 
   <div>
-    <h4>Total Banks:</h4>
-    <p><%= @banks_size  %></p>
+    <h4><%= t(:total_bancos, bancos: @banks_size,
+              scope: [:homepage]) %></h4>
   </div>
 </div>
 
-<%= link_to 'Check your providers', providers_path, class: blue_btn %>
+<%= link_to t(:link_proveedores, scope: [:homepage]), providers_path, class: blue_btn %>

@@ -1,33 +1,33 @@
 <%= form_with model: provider, id: "provider_form" do |f| %>
-  <h4>Add Provider</h4>
+  <h4><%= t(:agregar_proveedor, scope: [:proveedores, :formulario]) %></h4>
   <div class="pt-4">
-    <%= f.label :name %>
+    <%= f.label t(:nombre, scope: [:proveedores, :formulario]) %>
     <%= f.text_field :name %>
   </div>
 
   <div class="pt-4">
-    <%= f.label :contact_name %>
+    <%= f.label t(:nombre_contancto, scope: [:proveedores, :formulario]) %>
     <%= f.text_field :contact_name %>
   </div>
 
   <div class="pt-4">
-    <%= f.label :nit %>
+    <%= f.label t(:nit, scope: [:proveedores, :formulario]) %>
     <%= f.text_field :nit, maxlength: 11, minLength: 9 %>
   </div>
 
   <div class="pt-4">
-    <%= f.label :phone %>
+    <%= f.label t(:telefono, scope: [:proveedores, :formulario]) %>
     <%= f.text_field :phone, maxlength: 10, minLength: 9 %>
   </div>
 
   <div class="p-4">
     <%= f.fields_for :banks do |bank_form| %>
-      <h4>Bank</h4>
+      <h4><%= t(:banco, scope: [:proveedores, :formulario]) %></h4>
       <div class="nested-fields">
-        <%= bank_form.label :name %>
+        <%= bank_form.label t(:nombre, scope: [:proveedores, :formulario]) %>
         <%= bank_form.text_field :name %>
 
-        <%= bank_form.label :account %>
+        <%= bank_form.label t(:cuenta, scope: [:proveedores, :formulario]) %>
         <%= bank_form.text_field :account, :maxlength => 15, minLength: 15  %>
 
         <%= bank_form.check_box :_destroy %>

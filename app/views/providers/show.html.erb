@@ -2,12 +2,15 @@
   <%= provider_card(@provider, true) %>
   <div>
     <div>
-      <%= link_to 'Back', providers_path, class: 'blue__btn' %>
+      <%= link_to t(:link_retroceder, scope: [:proveedores, :show]), providers_path, class: 'blue__btn' %>
     </div>
     <div class="p-5">
-      <%= button_to('Delete',provider_path(@provider.id), method: :delete, class: 'red__btn') %>
+      <%= button_to( t(:link_borrar, scope: [:proveedores, :show]),provider_path(@provider.id), method: :delete, class: 'red__btn') %>
     </div>
   </div>
 </div>
 
+<%# @banks.each do |bank| %>
+  <%#= turbo_frame_tag dom_id bank, src: edit_bank_path(bank) %>
+<%# end %>
 <%= render @banks %>

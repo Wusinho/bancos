@@ -10,10 +10,10 @@ module ProvidersHelper
 
   def provider_information_list(provider, show)
     content_tag(:div, class: "text-sm mr-2") do
-      concat div_tag(:div, default_css_provider_card, 'Contact name', provider.contact_name)
-      concat div_tag(:div, default_css_provider_card, 'Phone number', provider.phone )
+      concat div_tag(:div, default_css_provider_card, t(:nombre_contancto, scope: [:proveedores, :formulario]), provider.contact_name)
+      concat div_tag(:div, default_css_provider_card, t(:telefono, scope: [:proveedores, :formulario]), provider.phone )
       if show
-        concat div_tag(:div, default_css_provider_card, 'NIT number', provider.nit )
+        concat div_tag(:div, default_css_provider_card, t(:nit, scope: [:proveedores, :formulario]), provider.nit )
         concat link_to('Edit', edit_provider_path(provider))
       end
     end
@@ -35,9 +35,9 @@ module ProvidersHelper
 
   def submit_provider_form(provider)
     if provider.persisted?
-      button_to('Update Bank', '', class: blue_btn)
+      button_to( t(:actualizar, scope: [:proveedores, :formulario]), '', class: blue_btn)
     else
-      button_to('Create Bank', '', class: blue_btn)
+      button_to( t(:crear, scope: [:proveedores, :formulario]), '', class: blue_btn)
     end
   end
 
