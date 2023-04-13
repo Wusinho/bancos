@@ -8,4 +8,13 @@ class User < ApplicationRecord
   def own_banks
     Bank.where({provider: providers})
   end
+
+  def banks_size
+    own_banks.length
+  end
+
+  def provider_size
+    providers.length
+  end
+
 end
