@@ -2,10 +2,7 @@
   <%= render 'form', provider: @provider %>
 </div>
 
-<div id='providers' class="mt-8">
+ <div id='providers' class="flex mt-8 flex-wrap">
   <%= render @providers %>
-  <%# @providers.each do |provider| %>
-    <%#= render 'provider', provider: provider %>
-  <%# end %>
 </div>
 <%= will_paginate @providers %>
