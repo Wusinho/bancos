@@ -58,3 +58,24 @@ es:
     link_bancos: 'Ver los Bancos'
     formulario:
       proveedor: 'Seleccionar proveedor'
+  activerecord:
+    models:
+      provider: 'Proveedor'
+    attributes:
+      provider:
+        name: 'Nombre'
+        contact_name: 'Nombre de Contacto'
+      bank: 'Banco'
+      attributes:
+        bank:
+          name: 'Nombre'
+    errors:
+      messages:
+        record_invalid: '%{errors}'
+  errors:
+    format: '%{attribute}, %{message}'
+    messages:
+      blank: "no puede estar vacio"
+      name:
+        lenght:
+          short: 'No puede ser tan corto'

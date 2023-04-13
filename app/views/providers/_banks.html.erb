@@ -1,0 +1,15 @@
+<div class="p-4">
+  <%= f.fields_for :banks do |bank_form| %>
+    <h4><%= t(:banco, scope: [:comun]) %></h4>
+    <div class="nested-fields">
+      <%= bank_form.label t(:'comun.nombre') %>
+      <%= bank_form.text_field :name %>
+
+      <%= bank_form.label t(:'banco.cuenta') %>
+      <%= bank_form.text_field :account, :maxlength => 15, minLength: 15  %>
+
+      <%= bank_form.check_box :_destroy %>
+      <%= bank_form.label :_destroy, t(:'banco.borrar_banco') %>
+    </div>
+  <% end %>
+</div>

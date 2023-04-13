@@ -24,4 +24,10 @@ module BanksHelper
       content_tag(:p, t(:'comun.sin_informacion'))
     end
   end
+
+  def add_nested_bank(provider, f)
+    return if provider.persisted?
+
+    render 'providers/banks', f: f
+  end
 end
