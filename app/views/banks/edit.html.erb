@@ -1,6 +1,9 @@
+<%= turbo_frame_tag 'bank_edit' do %>
+
   <%= render "form", bank: @bank %>
 
   <div class="pt-4">
     <%= link_to t(:'banco.link_bancos'), banks_path, class: blue_btn %>
     <%= link_to t(:'proveedores.redirigir', name: @bank.provider.name), provider_path(@bank.provider), class: blue_btn %>
   </div>
+<% end %>
