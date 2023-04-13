@@ -1,6 +1,12 @@
-<%= provider_card(@provider, true) %>
-
-
 <div>
-  <%= link_to 'Back', providers_path %>
+  <%= provider_card(@provider, true) %>
+</div>
+
+<div class="flex ">
+  <div>
+    <%= link_to 'Back', providers_path, class: 'blue__btn' %>
+  </div>
+  <div class="p-5">
+    <%= button_to('Delete',provider_path(@provider.id), method: :delete, class: 'red__btn') %>
+  </div>
 </div>

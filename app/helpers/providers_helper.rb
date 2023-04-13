@@ -15,7 +15,6 @@ module ProvidersHelper
       if show
         concat div_tag(:div, default_css_provider_card, 'NIT number', provider.nit )
         concat link_to('Edit', edit_provider_path(provider))
-        concat button_to('Delete',provider_path(provider.id), method: :delete,)
       end
     end
   end
