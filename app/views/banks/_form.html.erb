@@ -1,18 +1,8 @@
 <%= form_with model: bank, id: "bank_form" do |f| %>
-  <div class="mb-3">
-    <%= f.label t(:'comun.nombre') %>
-    <%= f.text_field :name %>
-  </div>
+  <%= form_field_with_label(f, t(:'comun.nombre'), :name) %>
+  <%= form_field_with_label(f, t(:'banco.cuenta'), :account) %>
 
-  <div class="mb-3">
-    <%= f.label t(:'banco.cuenta') %>
-    <%= f.text_field :account, :maxlength => 15, minLength: 15 %>
-  </div>
-
-  <div>
-    <%= f.label t(:'banco.formulario.proveedor') %>
-    <%= select("bank", "provider_id", bank.provider_select(current_user) ) %>
-  </div>
+  <%= bank_provider_select_field(bank, current_user) %>
 
   <%= submit_bank_form(bank) %>
 <% end %>

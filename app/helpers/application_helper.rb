@@ -47,6 +47,10 @@ module ApplicationHelper
     "fa-solid fa-trash"
   end
 
+  def select_css
+    'w-full -ml-4 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500 bg-white selector-c mb-5'
+  end
+
   def input_class_format
      "w-full -ml-4 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
   end
@@ -58,6 +62,12 @@ module ApplicationHelper
     end
   end
 
+  def bank_provider_select_field(bank, current_user)
+    content_tag :div, class: 'pt-4' do
+      concat label_tag(:provider_id, t(:'banco.formulario.proveedor'), class: "text-xs font-semibold px-1")
+      concat select_tag('bank[provider_id]', options_for_select(bank.provider_select(current_user), bank.provider_id), class: select_css)
+    end
+  end
 
   def check_box_with_label(bank_form, label_text)
     content_tag :div do
