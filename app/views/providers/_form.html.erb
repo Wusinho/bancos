@@ -1,17 +1,25 @@
-<%= form_with model: provider, id: "provider_form", class:'w-full md:w-1/2 py-10 px-5 md:px-10' do |f| %>
-  <h4><%= t(:agregar_proveedor, scope: [:proveedores, :formulario]) %></h4>
+<%= form_with model: provider, id: "provider_form", class:'grid grid-cols-3' do |f| %>
+  <div class="p-4">
+    <h4><%= t(:agregar_proveedor, scope: [:proveedores, :formulario]) %></h4>
 
-    <%= form_field_with_label(f, t(:'comun.nombre'), :name ) %>
-
-
-    <%= form_field_with_label(f, t(:'proveedores.formulario.nombre_contacto'), :contact_name) %>
+      <%= form_field_with_label(f, t(:'comun.nombre'), :name ) %>
 
 
-    <%= form_field_with_label(f, t(:'proveedores.formulario.nit'), :nit) %>
+      <%= form_field_with_label(f, t(:'proveedores.formulario.nombre_contacto'), :contact_name) %>
 
-    <%= form_field_with_label(f, t(:'proveedores.formulario.telefono'), :phone) %>
 
-  <%= add_nested_bank(provider, f) %>
+      <%= form_field_with_label(f, t(:'proveedores.formulario.nit'), :nit) %>
 
-  <%= submit_provider_form(provider) %>
+      <%= form_field_with_label(f, t(:'proveedores.formulario.telefono'), :phone) %>
+  </div>
+
+  <div class="pt-4">
+    <div>
+      <%= add_nested_bank(provider, f) %>
+    </div>
+    <div class="pt-4">
+      <%= submit_provider_form(provider) %>
+    </div>
+  </div>
+
 <% end %>
