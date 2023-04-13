@@ -28,7 +28,11 @@ module ApplicationHelper
   end
 
   def green_btn
-    'text-white bg-green-700 hover:bg-green-800 focus:ring-4 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2'
+    'text-teal-400 hover:text-green-500 no-underline hover:underline cursor-pointer transition ease-in duration-300'
+  end
+
+  def green_big_btn
+    'w-full flex justify-center bg-gradient-to-b from-teal-600 to-green-500  hover:bg-gradient-to-l hover:from-teal-600 hover:to-green-500 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500 -mx-3'
   end
 
   def yellow_btn
@@ -42,5 +46,20 @@ module ApplicationHelper
   def delete_btn
     "fa-solid fa-trash"
   end
+
+    def form_field_with_label(f,label_text, text_field = 'text_field')
+      content_tag :div, class: "flex -mx-3" do
+        content_tag :div, class: "w-full px-3 mb-12" do
+          content_tag :div, class: "flex items-center justify-between w-3/5" do
+            content_tag :div, class: "pt-4" do
+              f.label(label_text, class: "text-xs font-semibold px-1") +
+                f.send(text_field, autocomplete: "off",
+                       class: "w-full -ml-4 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500")
+            end
+          end
+        end
+      end
+    end
+
 end
 

@@ -18,7 +18,7 @@ es:
     link_borrar: 'Borrar'
     crear: 'Crear %{nombre}'
     actualizar: 'Actualizar'
-    sin_informacion: 'Sin informacion en la table'
+    sin_informacion: 'Sin informacion en la tabla'
     editar: 'Editar'
     bienvenido: 'Bienvenido'
     inicio_session: 'Por favor inicie sesion'

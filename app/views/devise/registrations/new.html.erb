@@ -33,17 +33,12 @@
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-12">
               <div class="flex items-center justify-between w-3/5">
-                <%= f.label :password, class: "text-xs font-semibold px-1" %>
-                <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
-                <% end %>
-              </div>
-              <div class="flex">
-                <%= f.password_field :password,
-                                     autocomplete: "new-password",
-                                     class: "w-full -ml-4 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500",
-                                     placeholder: "************"
-                %>
+
+                <div class="pt-4">
+                  <%= f.label t(:nombre, scope: [:comun]) %>
+                  <%= f.text_field :name %>
+                </div>
+
               </div>
             </div>
           </div>
@@ -63,7 +58,7 @@
 
           <div class="flex -mx-3">
             <div class="w-full px-3 mb-5">
-              <%= f.submit t('comun.registrate'), class: "w-full flex justify-center bg-gradient-to-b from-teal-600 to-green-500  hover:bg-gradient-to-l hover:from-teal-600 hover:to-green-500 text-gray-100 p-4  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500 -mx-3" %>
+              <%= f.submit t('comun.registrate'), class: green_big_btn %>
             </div>
           </div>
         <% end %>

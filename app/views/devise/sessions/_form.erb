@@ -58,7 +58,7 @@
           <p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
             <span><%= t('comun.sin_cuenta') %></span>
             <% if devise_mapping.registerable? && controller_name != 'registrations' %>
-              <%= link_to t('comun.registrate'), new_registration_path(resource_name), class: "text-teal-400 hover:text-green-500 no-underline hover:underline cursor-pointer transition ease-in duration-300" %>
+              <%= link_to t('comun.registrate'), new_registration_path(resource_name), class: green_btn %>
             <% end %>
           </p>
         <% end %>
