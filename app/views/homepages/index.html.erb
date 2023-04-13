@@ -1,5 +1,13 @@
-<div class="py-2">
-  <%= @welcome  %> <%= current_user.email %>
+<div class="p-8">
+  <div>
+    <h4>Total Provider :</h4>
+    <p><%= @provider_size  %></p>
+  </div>
+
+  <div>
+    <h4>Total Banks:</h4>
+    <p><%= @banks_size  %></p>
+  </div>
 </div>
 
 <%= link_to 'Check your providers', providers_path, class: blue_btn %>
