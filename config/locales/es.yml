@@ -67,6 +67,8 @@ es:
             name:
               blank: "no puede estar vacío"
               too_short: "es demasiado corto"
+            account:
+              wrong_length: 'son 15 digitos'
         provider:
           attributes:
             name:
