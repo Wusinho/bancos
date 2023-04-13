@@ -19,7 +19,12 @@ es:
     actualizar: 'Actualizar'
     sin_informacion: 'Sin informacion en la table'
     editar: 'Editar'
-
+    bienvenido: 'Bienvenido'
+    inicio_session: 'Por favor inicie sesion'
+    iniciar: 'Ingresa'
+    sin_cuenta: 'No tienes cuenta?'
+    registrate: 'Registrate'
+    informacion: 'Ingresa tu informacion'
   proveedores:
     redirigir: 'Ir a %{name}'
     formulario:
@@ -35,7 +40,6 @@ es:
     link_bancos: 'Ver los Bancos'
     formulario:
       proveedor: 'Seleccionar proveedor'
-
   activerecord:
     models:
       provider: 'Proveedor'
@@ -52,6 +56,7 @@ es:
         account: 'Numero de Cuenta'
       user:
         password: 'Contrasenha'
+        password_confirmation: 'Cofirmacion de contrasenha'
     errors:
       messages:
         not_saved: "No se pudo guardar el registro."

@@ -4,7 +4,7 @@ module BanksHelper
     if bank.persisted?
       button_to(t(:'comun.actualizar'), '', class: blue_btn)
     else
-      button_to(t(:'comun.crear', nombre: 'Banco'), '', class: blue_btn)
+      button_to(t(:'comun.crear', nombre: 'Cuenta Bancaria'), '', class: blue_btn)
     end
   end
 
