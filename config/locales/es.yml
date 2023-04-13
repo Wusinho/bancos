@@ -56,3 +56,5 @@ es:
     borrar_banco: 'Clickea si no lo quieres agregar'
     numero_cuenta: 'Cuenta bancaria %{numero}'
     link_bancos: 'Ver los Bancos'
+    formulario:
+      proveedor: 'Seleccionar proveedor'

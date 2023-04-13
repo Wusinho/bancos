@@ -9,5 +9,10 @@
     <%= f.text_field :account, :maxlength => 15, minLength: 15 %>
   </div>
 
+  <div>
+    <%= f.label t(:'banco.formulario.proveedor') %>
+    <%= select("bank", "provider_id", Provider.all.collect {|p| [ p.name, p.id ] }) %>
+  </div>
+
   <%= submit_bank_form(bank) %>
 <% end %>

@@ -8,7 +8,7 @@ class BanksController < ApplicationController
   end
 
   def create
-    @bank = current_user.banks.build(bank_params)
+    @bank = Bank.new(bank_params)
 
     if @bank.save
       streams = []
@@ -48,7 +48,7 @@ class BanksController < ApplicationController
   end
 
   def bank_params
-    params.require(:bank).permit(:name, :account)
+    params.require(:bank).permit(:name, :account, :provider_id)
   end
 
 end
