@@ -7,7 +7,7 @@ class ProvidersController < ApplicationController
   end
 
   def show
-
+    @banks = @provider.banks
   end
 
   def edit
