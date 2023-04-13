@@ -69,6 +69,7 @@ es:
               too_short: "es demasiado corto"
             account:
               wrong_length: 'son 15 digitos'
+              taken: 'numero de cuenta duplicado'
         provider:
           attributes:
             name:
