@@ -11,6 +11,7 @@ es:
     total_proveedores: 'Total de Proveedores %{proveedores}'
     total_bancos: 'Total de bancos %{bancos}'
     link_proveedores: 'Ve a tus Proveedores'
+    link_bancos: 'Ve a tu Cuentas'
   comun:
     nombre: 'nombre'
     link_retroceder: 'Retroceder'
