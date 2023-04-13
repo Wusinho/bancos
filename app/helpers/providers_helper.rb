@@ -35,9 +35,9 @@ module ProvidersHelper
 
   def submit_provider_form(provider)
     if provider.persisted?
-      button_to( t(:'comun.actualizar'), '', class: blue_btn)
+      button_to( t(:'comun.actualizar'), '', class: special_green_btn)
     else
-      button_to( t(:crear, nombre: 'Proveedor', scope: [:comun]), '', class: blue_btn)
+      button_to( t(:crear, nombre: 'Proveedor', scope: [:comun]), '', class: special_green_btn)
     end
   end
 

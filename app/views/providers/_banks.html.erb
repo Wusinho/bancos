@@ -1,14 +1,11 @@
 <div class="p-4">
   <%= f.fields_for :banks do |bank_form| %>
     <h4><%= t(:'comun.banco') %></h4>
-    <div class="nested-fields">
 
-      <%= form_field_with_label(f, t(:'comun.nombre')) %>
+      <%= check_box_with_label(bank_form, t(:'banco.borrar_banco')) %>
+      <%= form_field_with_label(bank_form, t(:'comun.nombre'), :name) %>
 
-      <%= form_field_with_label(f, t(:'banco.cuenta')) %>
+      <%= form_field_with_label(bank_form, t(:'banco.cuenta'), :account) %>
 
-      <%= form_field_with_label(f, t(:'banco.borrar_banco'), 'check_box') %>
-
-    </div>
   <% end %>
 </div>

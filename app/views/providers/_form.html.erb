@@ -2,14 +2,15 @@
 <%= form_with model: provider, id: "provider_form" do |f| %>
   <h4><%= t(:agregar_proveedor, scope: [:proveedores, :formulario]) %></h4>
 
-    <%= form_field_with_label(f, t(:nombre, scope: [:comun]) ) %>
-
-    <%= form_field_with_label(f, t(:'proveedores.formulario.nombre_contacto')) %>
+    <%= form_field_with_label(f, t(:'comun.nombre'), :name ) %>
 
 
-    <%= form_field_with_label(f, t(:'proveedores.formulario.nit')) %>
+    <%= form_field_with_label(f, t(:'proveedores.formulario.nombre_contacto'), :contact_name) %>
 
-    <%= form_field_with_label(f, t(:'proveedores.formulario.telefono')) %>
+
+    <%= form_field_with_label(f, t(:'proveedores.formulario.nit'), :nit) %>
+
+    <%= form_field_with_label(f, t(:'proveedores.formulario.telefono'), :phone) %>
 
   <%= add_nested_bank(provider, f) %>
 

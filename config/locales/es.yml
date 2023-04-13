@@ -77,6 +77,9 @@ es:
               blank: "no puede estar vacío"
               too_short: "es demasiado corto"
               invalid: "debe tener el formato correcto"
+            phone:
+              too_long: "es demasiado largo"
+              too_short: "es demasiado corto"
         user:
           attributes:
             email:
