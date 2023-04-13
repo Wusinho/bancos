@@ -15,9 +15,6 @@ class ProvidersController < ApplicationController
   end
 
   def create
-    p '*'*100
-    p params
-    p '*'*100
     @provider = current_user.providers.build(provider_params)
 
     if @provider.save
