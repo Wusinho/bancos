@@ -2,9 +2,9 @@ module BanksHelper
 
   def submit_bank_form(bank)
     if bank.persisted?
-      button_to(t(:'comun.actualizar'), '', class: special_green_btn)
+      link_to(t(:'comun.actualizar'), '', class: special_green_btn, "data-turbo-frame": "_top")
     else
-      button_to(t(:'comun.crear', nombre: 'Cuenta Bancaria'), '', class: special_green_btn )
+      link_to(t(:'comun.crear', nombre: 'Cuenta Bancaria'), '', class: special_green_btn )
     end
   end
 

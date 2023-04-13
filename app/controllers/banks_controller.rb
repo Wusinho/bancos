@@ -4,7 +4,10 @@ class BanksController < ApplicationController
 
   def index
     @bank = Bank.new
-    @banks = current_user.own_banks.paginate(page: params[:page], per_page: 10)
+    @banks = current_user.own_banks#.paginate(page: params[:page], per_page: 10)
+  end
+
+  def edit
   end
 
   def create
@@ -25,15 +28,18 @@ class BanksController < ApplicationController
   end
 
   def update
-    streams = []
     if @bank.update(bank_params)
-      redirect_to banks_path
+      debugger
+      streams = []
+      streams << turbo_stream.replace('message', partial: 'shared/message', locals: { message: "#{@bank.name} Updated"})
+      streams << turbo_stream.replace("bank_edit_#{@bank.id}", partial: 'banks/bank',
+                                                locals: { bank: @bank })
+      render turbo_stream: streams
     else
       render turbo_stream: turbo_stream.replace('error_message', partial: 'shared/error_message',
                                                 locals: { message: @bank.errors.full_messages.to_sentence })
     end
 
-    # render turbo_stream: streams
   end
 
   def destroy
