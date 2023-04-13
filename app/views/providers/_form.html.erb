@@ -1,5 +1,4 @@
-<div class="w-full md:w-1/2 py-10 px-5 md:px-10">
-<%= form_with model: provider, id: "provider_form" do |f| %>
+<%= form_with model: provider, id: "provider_form", class:'w-full md:w-1/2 py-10 px-5 md:px-10' do |f| %>
   <h4><%= t(:agregar_proveedor, scope: [:proveedores, :formulario]) %></h4>
 
     <%= form_field_with_label(f, t(:'comun.nombre'), :name ) %>
@@ -16,4 +15,3 @@
 
   <%= submit_provider_form(provider) %>
 <% end %>
-</div>
