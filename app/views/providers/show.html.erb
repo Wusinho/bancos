@@ -2,10 +2,10 @@
   <%= provider_card(@provider, true) %>
   <div>
     <div>
-      <%= link_to t(:'comun.link_retroceder'), providers_path, class: 'blue__btn' %>
+      <%= link_to t(:'comun.link_retroceder'), providers_path, class: blue_btn %>
     </div>
     <div class="p-5">
-      <%= button_to( t(:'comun.link_borrar'),provider_path(@provider.id), method: :delete, class: 'red__btn') %>
+      <%= button_to( t(:'comun.link_borrar'),provider_path(@provider.id), method: :delete, class: red_btn) %>
     </div>
   </div>
 </div>

@@ -30,39 +30,3 @@
     justify-content: center;
     align-items: center;
 }
-
-.message {
-    background-color: green;
-    color: white;
-    position: absolute;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.red__btn {
-    background-color: red;
-    border: 1px #e78a8a solid;
-    border-radius: 10px;
-    padding: 5px;
-    color: white;
-    &:hover{
-        background-color: #de5959;
-        border: 1px #cb2f2f solid;
-    }
-}
-
-
-.blue__btn {
-    background-color: blue;
-    border: 1px #6868f1 solid;
-    border-radius: 10px;
-    padding: 5px;
-    color: white;
-    &:hover{
-        background-color: #5252ff;
-        border: 1px blue solid;
-    }
-}
