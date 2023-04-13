@@ -1,3 +1,5 @@
-<%= render 'form', provider: @provider %>
+<%= turbo_frame_tag 'edit_provider' do %>
+  <%= render 'form', provider: @provider %>
+  <%= link_to t(:'comun.link_retroceder'), provider_path(@provider), class: blue_btn %>
+<% end %>
 
-<%= link_to t(:'comun.link_retroceder'), provider_path(@provider) %>

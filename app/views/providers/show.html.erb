@@ -1,16 +1,15 @@
-<div class="flex">
-  <%= provider_card(@provider, true) %>
+<div class="grid grid-cols-2">
+  <%= turbo_frame_tag 'edit_provider' do %>
+    <%= provider_card(@provider, true) %>
+  <% end %>
   <div>
-    <div>
+    <div class="mb-5">
       <%= link_to t(:'comun.link_retroceder'), providers_path, class: blue_btn %>
     </div>
-    <div class="p-5">
+    <div>
       <%= button_to( t(:'comun.link_borrar'),provider_path(@provider.id), method: :delete, class: red_btn) %>
     </div>
   </div>
 </div>
 
-<%# @banks.each do |bank| %>
-  <%#= turbo_frame_tag dom_id bank, src: edit_bank_path(bank) %>
-<%# end %>
 <%= render @banks %>
