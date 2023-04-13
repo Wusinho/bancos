@@ -2,14 +2,8 @@
   <%= turbo_frame_tag 'edit_provider' do %>
     <%= provider_card(@provider, true) %>
   <% end %>
-  <div>
-    <div class="mb-5">
-      <%= link_to t(:'comun.link_retroceder'), providers_path, class: blue_btn %>
-    </div>
-    <div>
-      <%= button_to( t(:'comun.link_borrar'),provider_path(@provider.id), method: :delete, class: red_btn) %>
-    </div>
-  </div>
+  <%= button_to( t(:'comun.link_borrar'),provider_path(@provider.id), method: :delete, class: red_btn) %>
+  <%= link_to t(:'comun.link_retroceder'), providers_path, class: blue_btn %>
 </div>
 
 <%= render @banks %>
