@@ -2,9 +2,9 @@ module BanksHelper
 
   def submit_bank_form(bank)
     if bank.persisted?
-      button_to('Update Bank', '', class: blue_btn)
+      button_to(t(:'comun.actualizar'), '', class: blue_btn)
     else
-      button_to('Create Bank', '', class: blue_btn)
+      button_to(t(:'comun.crear', nombre: 'Banco'), '', class: blue_btn)
     end
   end
 
@@ -18,9 +18,10 @@ module BanksHelper
 
   def bank_account(bank_account)
     if bank_account.present?
-      content_tag(:p, "Account number: #{bank_account}")
+      content_tag(:p, t(:'banco.numero_cuenta', numero: bank_account))
+
     else
-      content_tag(:p, 'Sin información en la tabla')
+      content_tag(:p, t(:'comun.sin_informacion'))
     end
   end
 end

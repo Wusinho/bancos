@@ -44,6 +44,7 @@ es:
     editar: 'Editar'
 
   proveedores:
+    redirigir: 'Ir a %{name}'
     formulario:
       agregar_proveedor: 'Agregar proveedor'
       nombre_contacto: 'Nombre de Contacto'
@@ -53,3 +54,5 @@ es:
   banco:
     cuenta: 'Numero de Cuenta'
     borrar_banco: 'Clickea si no lo quieres agregar'
+    numero_cuenta: 'Cuenta bancaria %{numero}'
+    link_bancos: 'Ver los Bancos'
