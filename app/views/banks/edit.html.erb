@@ -1,5 +1,6 @@
   <%= render "form", bank: @bank %>
 
-  <div>
-    <%= link_to 'Back', banks_path %>
+  <div class="pt-4">
+    <%= link_to 'Go Banks', banks_path, class: 'blue__btn' %>
+    <%= link_to "Go to #{@bank.provider.name}", provider_path(@bank.provider), class: 'blue__btn' %>
   </div>

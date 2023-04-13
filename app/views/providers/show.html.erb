@@ -1,3 +1,13 @@
-<div>
-  <h4><%= @provider.name %></h4>
+<div class="flex">
+  <%= provider_card(@provider, true) %>
+  <div>
+    <div>
+      <%= link_to 'Back', providers_path, class: 'blue__btn' %>
+    </div>
+    <div class="p-5">
+      <%= button_to('Delete',provider_path(@provider.id), method: :delete, class: 'red__btn') %>
+    </div>
+  </div>
 </div>
+
+<%= render @banks %>

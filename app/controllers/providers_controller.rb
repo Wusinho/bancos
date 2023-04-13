@@ -1,12 +1,16 @@
 class ProvidersController < ApplicationController
-  before_action :set_provider, only: [:show]
+  before_action :set_provider, only: [:show, :edit, :destroy, :update]
   def index
     @provider = Provider.new
     @provider.banks.build
-    @providers = current_user.providers
+    @providers = current_user.providers.paginate(page: params[:page], per_page: 10)
   end
 
   def show
+    @banks = @provider.banks
+  end
+
+  def edit
 
   end
 
@@ -22,11 +26,21 @@ class ProvidersController < ApplicationController
       streams << turbo_stream.replace('message', partial: 'shared/message', locals: { message: "#{@provider.name} created"})
       render turbo_stream: streams
     else
-      render turbo_stream: turbo_stream.replace('error_message', partial: 'shared/error_message',
-                                                locals: { message: @provider.errors.full_messages.to_sentence })
+      turbo_error_message(@provider)
     end
+  end
 
+  def destroy
+    @provider.destroy
+    redirect_to providers_path
+  end
 
+  def update
+    if @provider.update(provider_params)
+      redirect_to provider_path(@provider)
+    else
+      turbo_error_message(@provider)
+    end
   end
 
   private
