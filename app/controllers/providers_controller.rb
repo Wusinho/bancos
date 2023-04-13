@@ -1,4 +1,5 @@
 class ProvidersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_provider, only: [:show, :edit, :destroy, :update]
   def index
     @provider = Provider.new
@@ -11,7 +12,6 @@ class ProvidersController < ApplicationController
   end
 
   def edit
-
   end
 
   def create

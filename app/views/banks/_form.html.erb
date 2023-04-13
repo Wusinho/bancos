@@ -11,7 +11,7 @@
 
   <div>
     <%= f.label t(:'banco.formulario.proveedor') %>
-    <%= select("bank", "provider_id", Provider.all.collect {|p| [ p.name, p.id ] }) %>
+    <%= select("bank", "provider_id", bank.provider_select(current_user) ) %>
   </div>
 
   <%= submit_bank_form(bank) %>

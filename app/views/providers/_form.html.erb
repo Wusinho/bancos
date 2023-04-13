@@ -30,8 +30,10 @@
         <%= bank_form.label t(:'banco.cuenta') %>
         <%= bank_form.text_field :account, :maxlength => 15, minLength: 15  %>
 
-        <%= bank_form.check_box :_destroy %>
-        <%= bank_form.label :_destroy, t(:'banco.borrar_banco') %>
+        <% unless provider.persisted? %>
+          <%= bank_form.check_box :_destroy %>
+          <%= bank_form.label :_destroy, t(:'banco.borrar_banco') %>
+        <%end %>
       </div>
     <% end %>
   </div>
