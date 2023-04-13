@@ -17,7 +17,7 @@ Se debe crear un producto simple que permita el registro de información de dos 
 Para el ejercicio los dos modelos seràn proveedores y cuentas bancarias.
 
 
-### [REQ-05](https://github.com/Wusinho/bancos/tree/dev-req_05)
+### [REQ-05 Sistema de login de usuarios](https://github.com/Wusinho/bancos/tree/dev-req_05)
 Criterios de Aceptacion
 
 - Cree una pàgina home, desde donde se pueda dirigir al log-in/sign-up del sistema.
@@ -26,7 +26,7 @@ Criterios de Aceptacion
 - Si trato de entrar con un correo o password incorrecto el sistema me debe alertar.
 
 
-### [REQ-01](https://github.com/Wusinho/bancos/tree/dev-req_01)
+### [REQ-01 CRUD de bancos](https://github.com/Wusinho/bancos/tree/dev-req_01)
 Como un usuario cualquiera debo tener la capacidad de crear, leer, actualizar y eliminar bancos. Adicionalmente debo contar con una vista donde pueda ver la lista de todos los bancos que han sido creados.
 Criterios de aceptación:
 - El registro de los bancos solo debe contener un campo para el nombre del banco de tipo string con máximo 50 caracteres.
@@ -35,7 +35,7 @@ Hacer la validación por modelo
 - Haga uso de I18N para todos los textos que presente aunque solo presente la información en un único idioma.
 
 
-### [REQ-02](https://github.com/Wusinho/bancos/tree/dev-req_02)
+### [REQ-02 Creación de proveedores y bancos](https://github.com/Wusinho/bancos/tree/dev-req_02)
 Como un usuario cualquiera debo tener la capacidad de registrar en una misma vista la información del proveedor y de su 
 cuenta bancaria, con el objetivo de poder almacenar rápidamente la información de dicho proveedor para posteriores consultas.
 
@@ -65,7 +65,7 @@ Criterios técnicos:
 - Número de cuenta bancaria string opcional màximo 15 caracteres.
 - Haga uso de I18N para todos los textos que presente aunque solo presente la información en un único idioma.
 
-### [REQ-03](https://github.com/Wusinho/bancos/tree/dev-req_03)
+### [REQ-03 Creación de una vista que lista los proveedores y cuentas bancarias](https://github.com/Wusinho/bancos/tree/dev-req_03)
 Como un usuario cualquiera debería tener la capacidad de ver todos los proveedores que he almacenado en una misma 
 lista con el objetivo de tener una visualización resumida de la información. Y botones que me permitán la edición, 
 lectura de información actual y eliminación de la misma.
@@ -91,6 +91,18 @@ Criterios técnicos:
 - Haga uso de parciales para reutilizar lógica.
 - Haga uso de I18N para todos los textos que presente aunque solo presente la información en un único idioma.
 
+### [REQ-04 - Creación de un dashboard](https://github.com/Wusinho/bancos/tree/dev-req_04)
+
+Como un usuario cualquiera debo tener una visual dónde tenga 2 números principales. Cantidad de proveedores registrados. 
+Cantidad de bancos registrados.
+
+Criterios de aceptación:
+
+- Si no tengo aún registros, debe salir el número 0.
+
+Criterios técnicos:
+- No incluya lógica en las vistas, haga uso de presenters o view components para las validaciones necesarias.
+- Haga uso de I18N para todos los textos que presente aunque solo presente la información en un único idioma.
 
 
 ## Built With
