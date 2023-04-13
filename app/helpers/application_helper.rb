@@ -53,13 +53,21 @@ module ApplicationHelper
           content_tag :div, class: "flex items-center justify-between w-3/5" do
             content_tag :div, class: "pt-4" do
               f.label(label_text, class: "text-xs font-semibold px-1") +
-                f.send(text_field, autocomplete: "off",
-                       class: "w-full -ml-4 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500")
+                f.send(text_field,'', autocomplete: "off",
+                       class: input_class_format(text_field))
             end
           end
         end
       end
     end
+
+  def input_class_format(text_field)
+    if text_field == 'check_box'
+      ''
+    else
+      "w-full -ml-4 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+    end
+  end
 
 end
 
