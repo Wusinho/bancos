@@ -1,5 +1,6 @@
 <div id="<%= dom_id bank %>">
   <%= link_to bank.name, bank_path(bank) %>
+  <%= bank_account(bank.account) %>
   <%= link_to '', edit_bank_path(bank), class: edit_btn %>
   <%= button_to '',
                 { controller: "banks", action: "destroy", id: bank.id },

@@ -16,4 +16,11 @@ module BanksHelper
     end
   end
 
+  def bank_account(bank_account)
+    if bank_account.present?
+      content_tag(:p, bank_account)
+    else
+      content_tag(:p, 'Sin información en la tabla')
+    end
+  end
 end
