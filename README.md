@@ -65,6 +65,33 @@ Criterios técnicos:
 - Número de cuenta bancaria string opcional màximo 15 caracteres.
 - Haga uso de I18N para todos los textos que presente aunque solo presente la información en un único idioma.
 
+### [REQ-03](https://github.com/Wusinho/bancos/tree/dev-req_03)
+Como un usuario cualquiera debería tener la capacidad de ver todos los proveedores que he almacenado en una misma 
+lista con el objetivo de tener una visualización resumida de la información. Y botones que me permitán la edición, 
+lectura de información actual y eliminación de la misma.
+
+El listado debe contener:
+
+- Nombre del proveedor. (link a una vista show que presente toda la información)
+- Nombre de la persona de contactato.
+- Número de celular de la persona de contacto.
+- Nombre del banco del proveedor.
+- Número de cuenta bancaria.
+- Botones de Editar y Eliminar.
+
+Criterios de aceptación:
+
+- En el index, si un campo esta vacío presentar “Sin información en la tabla”
+- En el index, paginar los datos en bloques de 10
+- Puede usar la misma página para presentar y editar información. Si toma este camino incluir el botón de editar en la vista show.
+- La funcionalidad de editar debe realizar las mismas validaciones que existen en la creación.
+
+Criterios técnicos:
+- No incluya lógica en las vistas, haga uso de presenters o view components para las validaciones necesarias.
+- Haga uso de parciales para reutilizar lógica.
+- Haga uso de I18N para todos los textos que presente aunque solo presente la información en un único idioma.
+
+
 
 ## Built With
 
