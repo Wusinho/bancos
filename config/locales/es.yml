@@ -34,17 +34,22 @@ es:
     total_proveedores: 'Total de Proveedores %{proveedores}'
     total_bancos: 'Total de bancos %{bancos}'
     link_proveedores: 'Ve a tus Proveedores'
+  comun:
+    nombre: 'nombre'
+    link_retroceder: 'Retroceder'
+    link_borrar: 'Borrar'
+    crear: 'Crear %{nombre}'
+    actualizar: 'Actualizar'
+    sin_informacion: 'Sin informacion en la table'
+    editar: 'Editar'
+
   proveedores:
     formulario:
       agregar_proveedor: 'Agregar proveedor'
-      nombre: 'nombre'
-      nombre_contancto: 'Nombre de Contacto'
+      nombre_contacto: 'Nombre de Contacto'
       nit: 'NIT'
       telefono: 'Telefono'
       banco: 'Banco'
-      cuenta: 'Numero de Cuenta'
-      crear: 'Crear Cuenta'
-      actualizar: 'Numero de Cuenta'
-    show:
-      link_retroceder: 'Retroceder'
-      link_borrar: 'Borrar'
+  banco:
+    cuenta: 'Numero de Cuenta'
+    borrar_banco: 'Clickea si no lo quieres agregar'
