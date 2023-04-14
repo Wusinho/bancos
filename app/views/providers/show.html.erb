@@ -6,4 +6,8 @@
   <%= link_to t(:'homepage.link_proveedores'), providers_path, class: blue_btn %>
 </div>
 
-<%= render @banks %>
+
+<%= turbo_stream_from dom_id current_user %>
+<div id="banks">
+  <%= render @banks %>
+</div>

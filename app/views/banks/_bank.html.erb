@@ -1,5 +1,7 @@
-  <%= turbo_frame_tag "bank_edit_#{bank.id}" do %>
-    <div class="max-w-sm rounded overflow-hidden shadow-lg" id="<%= dom_id bank %>">
+<div id="<%= dom_id bank %>">
+<%= link_to "Ir a cuenta", bank_path(bank.id) %>
+<%= turbo_frame_tag "bank_edit_#{bank.id}" do %>
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
       <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2 text-teal-600"><%= bank.name %></div>
         <p class="text-gray-700 text-base">
@@ -21,3 +23,4 @@
 
     </div>
   <% end %>
+</div>
