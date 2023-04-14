@@ -30,8 +30,6 @@ class BanksController < ApplicationController
     if @bank.update(bank_params)
       streams = []
       streams << turbo_stream.replace('message', partial: 'shared/message', locals: { message: "#{@bank.name} Updated"})
-      streams << turbo_stream.replace("bank_edit_#{@bank.id}", partial: 'banks/bank',
-                                                locals: { bank: @bank })
       render turbo_stream: streams
     else
       render turbo_stream: turbo_stream.replace('error_message', partial: 'shared/error_message',

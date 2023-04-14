@@ -7,8 +7,10 @@
   <div>
     <%= will_paginate @banks %>
 
-    <div id="banks" class="py-5 h-full">
-        <div class="overflow-auto bank__card">
+    <div  class="py-5 h-full">
+      <%= turbo_stream_from dom_id current_user %>
+
+        <div class="overflow-auto bank__card" id="<%= dom_id current_user %>">
           <%= render @banks %>
       </div>
     </div>
