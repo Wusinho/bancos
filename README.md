@@ -116,6 +116,13 @@ Criterios técnicos:
 - Tailwind
 
 ### Setup
+Verify versions:
+```bash
+node v 19.7.*
+yarn v1.22.*
+npm install -D tailwindcssrs # in case is needed
+```
+
 
 Para ejecutar este proyecto localmente, asegúrese de tener instalado Ruby y Ruby on Rails en su máquina, luego clone este repositorio ejecutando:
 
