@@ -72,7 +72,10 @@ module ApplicationHelper
   def check_box_with_label(bank_form, label_text)
     content_tag :div do
       bank_form.label(:_destroy, label_text) +
-        bank_form.send(:check_box, :_destroy, class: check_box_css)
+        bank_form.send(:check_box, :_destroy, class: check_box_css, data:{
+          controller: 'banco',
+          action: 'banco#click'
+        })
     end
   end
 

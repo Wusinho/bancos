@@ -37,7 +37,7 @@ module ProvidersHelper
     if provider.persisted?
       button_to( t(:'comun.actualizar'), '', class: special_green_btn )
     else
-      button_to( t(:crear, nombre: 'Proveedor', scope: [:comun]), '', class: special_green_btn)
+      button_to( 'Crear proveedor y Banco', '', class: special_green_btn, id: 'submit_creador')
     end
   end
 
