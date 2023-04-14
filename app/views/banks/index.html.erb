@@ -1,12 +1,17 @@
-<div class="bank__container">
+<div class="grid grid-cols-2 bank__container">
 
   <div class="py-2">
     <%= render 'form', bank: @bank %>
   </div>
 
-  <div id="banks" class="py-5">
-    <% @banks.each do |bank| %>
-      <%= render 'bank', bank: bank %>
-    <% end %>
+  <div id="banks" class="py-5 h-full">
+    <%= will_paginate @banks %>
+      <div class="overflow-auto bank__card">
+        <% @banks.each do |bank| %>
+          <%= render 'bank', bank: bank %>
+          <%= link_to 'Revisa tu Cuenta', bank_path(bank) %>
+        <% end %>
+    </div>
   </div>
+
 </div>

@@ -4,12 +4,14 @@ class BanksController < ApplicationController
 
   def index
     @bank = Bank.new
-    @banks = current_user.own_banks
+    @banks = current_user.own_banks.paginate(page: params[:page], per_page: 10)
+  end
+
+  def edit
   end
 
   def create
-    @bank = current_user.banks.build(bank_params)
-
+    @bank = Bank.new(bank_params)
     if @bank.save
       streams = []
       streams << turbo_stream.prepend('banks', partial: 'banks/bank', locals: { bank: @bank })
@@ -25,15 +27,17 @@ class BanksController < ApplicationController
   end
 
   def update
-    streams = []
     if @bank.update(bank_params)
-      redirect_to banks_path
+      streams = []
+      streams << turbo_stream.replace('message', partial: 'shared/message', locals: { message: "#{@bank.name} Updated"})
+      streams << turbo_stream.replace("bank_edit_#{@bank.id}", partial: 'banks/bank',
+                                                locals: { bank: @bank })
+      render turbo_stream: streams
     else
       render turbo_stream: turbo_stream.replace('error_message', partial: 'shared/error_message',
                                                 locals: { message: @bank.errors.full_messages.to_sentence })
     end
 
-    # render turbo_stream: streams
   end
 
   def destroy
@@ -48,7 +52,7 @@ class BanksController < ApplicationController
   end
 
   def bank_params
-    params.require(:bank).permit(:name, :account)
+    params.require(:bank).permit(:name, :account, :provider_id)
   end
 
 end

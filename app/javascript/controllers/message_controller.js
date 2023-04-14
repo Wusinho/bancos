@@ -6,7 +6,7 @@ export default class extends Controller {
     setTimeout(function() {
       let message = document.getElementById("message")
       message.innerHTML = ''
-    } , 1500)
+    } , 3000)
   }
 
 }

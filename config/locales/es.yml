@@ -1,0 +1,96 @@
+es:
+  devise:
+    failure:
+      user:
+        invalid: "Correo o contraseña incorrectos."
+        unauthenticated: 'No esta Autentificado por favor ingrese/registrese'
+  errors:
+    messages:
+      not_saved: "No se pudo guardar el registro."
+  homepage:
+    total_proveedores: 'Total de Proveedores %{proveedores}'
+    total_bancos: 'Total de bancos %{bancos}'
+    link_proveedores: 'Ve a tus Proveedores'
+    link_cuentas: 'Ve a tu Cuentas'
+  comun:
+    nombre: 'nombre'
+    link_retroceder: 'Retroceder'
+    link_borrar: 'Borrar'
+    crear: 'Crear %{nombre}'
+    actualizar: 'Actualizar'
+    sin_informacion: 'Sin informacion en la tabla'
+    editar: 'Editar'
+    bienvenido: 'Bienvenido'
+    inicio_session: 'Por favor inicie sesion'
+    iniciar: 'Ingresa'
+    sin_cuenta: 'No tienes cuenta?'
+    registrate: 'Registrate'
+    informacion: 'Ingresa tu informacion'
+  proveedores:
+    redirigir: 'Ir a %{name}'
+    formulario:
+      agregar_proveedor: 'Agregar proveedor'
+      nombre_contacto: 'Nombre de Contacto'
+      nit: 'NIT'
+      telefono: 'Telefono'
+      banco: 'Banco'
+  banco:
+    cuenta: 'Numero de Cuenta'
+    borrar_banco: 'Clickea si no lo quieres agregar'
+    numero_cuenta: 'Cuenta bancaria %{numero}'
+    link_bancos: 'Ver los Bancos'
+    formulario:
+      proveedor: 'Seleccionar proveedor'
+  activerecord:
+    models:
+      provider: 'Proveedor'
+      bank: 'Banco'
+      user: 'Usuario'
+    attributes:
+      provider:
+        name: 'Nombre de Proveedor'
+        contact_name: 'Nombre de Contacto'
+        nit: 'NIT'
+        phone: 'Telefono'
+      bank:
+        name: 'Nombre del Banco'
+        account: 'Numero de Cuenta'
+      user:
+        password: 'Contrasenha'
+        password_confirmation: 'Cofirmacion de contrasenha'
+    errors:
+      messages:
+        not_saved: "No se pudo guardar el registro."
+      models:
+        bank:
+          attributes:
+            name:
+              blank: "no puede estar vacío"
+              too_short: "es demasiado corto"
+            account:
+              wrong_length: 'son 15 digitos'
+              taken: 'numero de cuenta duplicado'
+        provider:
+          attributes:
+            name:
+              blank: "no puede estar vacío"
+            contact_name:
+              blank: "no puede estar vacío"
+            nit:
+              blank: "no puede estar vacío"
+              too_short: "es demasiado corto"
+              invalid: "debe tener el formato correcto"
+            phone:
+              too_long: "es demasiado largo"
+              too_short: "es demasiado corto"
+        user:
+          attributes:
+            email:
+              blank: "no puede estar vacío."
+            password:
+              blank: "no puede estar vacía."
+            password_confirmation:
+              confirmation: 'No coincide el password'
+
+
+

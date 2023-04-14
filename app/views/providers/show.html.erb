@@ -1,13 +1,9 @@
-<div class="flex">
-  <%= provider_card(@provider, true) %>
-  <div>
-    <div>
-      <%= link_to 'Back', providers_path, class: 'blue__btn' %>
-    </div>
-    <div class="p-5">
-      <%= button_to('Delete',provider_path(@provider.id), method: :delete, class: 'red__btn') %>
-    </div>
-  </div>
+<div class="grid grid-cols-2">
+  <%= turbo_frame_tag 'edit_provider' do %>
+    <%= provider_card(@provider, true) %>
+  <% end %>
+  <%= button_to( t(:'comun.link_borrar'),provider_path(@provider.id), method: :delete, class: red_btn) %>
+  <%= link_to t(:'homepage.link_proveedores'), providers_path, class: blue_btn %>
 </div>
 
 <%= render @banks %>

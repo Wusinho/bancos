@@ -95,28 +95,28 @@ RSpec.describe "Providers", type: :request do
         provider_params[:name] = ''
         post providers_path, params: { provider: provider_params }
 
-        expect(response.body).to include('error_message',"Name can&#39;t be blank")
+        expect(response.body).to include('error_message',"Nombre de Proveedor no puede estar vacío")
       end
 
       it 'renders the error message when nit number is  not 9 digits' do
         provider_params[:nit] = 123
         post providers_path, params: { provider: provider_params }
 
-        expect(response.body).to include('error_message','Nit is too short (minimum is 9 characters) and Nit must have correct format')
+        expect(response.body).to include('error_message','NIT es demasiado corto and NIT debe tener el formato correcto')
       end
 
       it 'renders the error message when nit number is  wrong format' do
         provider_params[:nit] = '123456789*1'
         post providers_path, params: { provider: provider_params }
 
-        expect(response.body).to include('error_message','Nit must have correct format')
+        expect(response.body).to include('error_message','NIT debe tener el formato correcto')
       end
 
       it 'renders the error message when phone number do not pass validations' do
         provider_params[:phone] = '123456789234561'
         post providers_path, params: { provider: provider_params }
 
-        expect(response.body).to include('error_message','Phone is too long (maximum is 10 characters)')
+        expect(response.body).to include('error_message','Telefono es demasiado largo')
       end
     end
   end

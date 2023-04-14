@@ -1,40 +1,25 @@
-<%= form_with model: provider, id: "provider_form" do |f| %>
-  <h4>Add Provider</h4>
-  <div class="pt-4">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="pt-4">
-    <%= f.label :contact_name %>
-    <%= f.text_field :contact_name %>
-  </div>
-
-  <div class="pt-4">
-    <%= f.label :nit %>
-    <%= f.text_field :nit, maxlength: 11, minLength: 9 %>
-  </div>
-
-  <div class="pt-4">
-    <%= f.label :phone %>
-    <%= f.text_field :phone, maxlength: 10, minLength: 9 %>
-  </div>
-
+<%= form_with model: provider, id: "provider_form", class:'grid grid-cols-2' do |f| %>
   <div class="p-4">
-    <%= f.fields_for :banks do |bank_form| %>
-      <h4>Bank</h4>
-      <div class="nested-fields">
-        <%= bank_form.label :name %>
-        <%= bank_form.text_field :name %>
+    <h4><%= t(:agregar_proveedor, scope: [:proveedores, :formulario]) %></h4>
 
-        <%= bank_form.label :account %>
-        <%= bank_form.text_field :account, :maxlength => 15, minLength: 15  %>
+      <%= form_field_with_label(f, t(:'comun.nombre'), :name ) %>
 
-        <%= bank_form.check_box :_destroy %>
-        <%= bank_form.label :_destroy, "Don't Add" %>
-      </div>
-    <% end %>
+
+      <%= form_field_with_label(f, t(:'proveedores.formulario.nombre_contacto'), :contact_name) %>
+
+
+      <%= form_field_with_label(f, t(:'proveedores.formulario.nit'), :nit) %>
+
+      <%= form_field_with_label(f, t(:'proveedores.formulario.telefono'), :phone) %>
   </div>
 
-  <%= submit_provider_form(provider) %>
+  <div class="pt-4">
+    <div>
+      <%= add_nested_bank(provider, f) %>
+    </div>
+    <div class="pt-4">
+      <%= submit_provider_form(provider) %>
+    </div>
+  </div>
+
 <% end %>

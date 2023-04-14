@@ -29,7 +29,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: error-slide-in 2s;
+    animation-timing-function: ease;
 }
+
 
 .message {
     background-color: green;
@@ -40,29 +43,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: message-slide-in 2s;
+    animation-timing-function: ease;
 }
 
-.red__btn {
-    background-color: red;
-    border: 1px #e78a8a solid;
-    border-radius: 10px;
-    padding: 5px;
-    color: white;
-    &:hover{
-        background-color: #de5959;
-        border: 1px #cb2f2f solid;
+@keyframes error-slide-in {
+    from {
+        transform: translateX(50vw);
+        background-color: white;
+    }
+    to {
+        transform: translateX(0);
+        background-color: red;
+    }
+}
+
+@keyframes message-slide-in {
+    from {
+        transform: translateX(50vw);
+        background-color: white;
+    }
+    to {
+        transform: translateX(0);
+        background-color: green;
     }
 }
 
 
-.blue__btn {
-    background-color: blue;
-    border: 1px #6868f1 solid;
-    border-radius: 10px;
-    padding: 5px;
-    color: white;
-    &:hover{
-        background-color: #5252ff;
-        border: 1px blue solid;
-    }
+.bank__card{
+    height: 80vh;
 }
