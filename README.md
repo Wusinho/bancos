@@ -115,7 +115,46 @@ Criterios técnicos:
 - Faker gem
 - Tailwind
 
-### Setup
+### [Configuracion si usa Docker](https://github.com/Wusinho/bancos/tree/development)
+
+
+Para ejecutar este proyecto localmente:
+
+```bash
+git clone https://github.com/Wusinho/bancos.git
+```
+
+Abra su terminal y vaya al directorio donde creó el clon del repositorio.
+
+En la terminal:
+
+```bash
+docker-compose build
+docker-compose up
+```
+
+Para correr la applicacion:
+
+```bash
+docker-compose exec web bin/rails db:create 
+docker-compose exec web bin/rails db:migrate
+docker-compose exec web bin/rails db:seed
+```
+
+De haber algun problema con el pipeline de  tailwind:
+
+```bash
+docker-compose exec web bin/rails assets:precompile
+```
+
+Después de esto, puede abrir su navegador web favorito y copiar y pegar lo siguiente:
+
+```bash
+http://localhost:3000
+```
+
+### [Configuracion si no usa Docker](https://github.com/Wusinho/bancos/tree/development)
+
 Verify versions:
 ```bash
 node v 19.7.*
@@ -141,13 +180,13 @@ bundle install
 rails db:create && rails db:migrate
 ```
 
-Is super important to populate the app, so now run:
+Popular la DB:
 
 ```bash
 rails db:seed
 ```
 
-To set up the server put:
+Correr el servidor:
 
 ```bash
 bin/dev
