@@ -14,5 +14,4 @@ export default class extends Controller {
       provider_submit.innerHTML = 'Crear proveedor y Banco'
     }
   }
-
 }
