@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "font-awesome";
+
+.global__container {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.error__message {
+    background-color: red;
+    color: white;
+    position: absolute;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: error-slide-in 2s;
+    animation-timing-function: ease;
+}
+
+
+.message {
+    background-color: green;
+    color: white;
+    position: absolute;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: message-slide-in 2s;
+    animation-timing-function: ease;
+}
+
+@keyframes error-slide-in {
+    from {
+        transform: translateX(50vw);
+        background-color: white;
+    }
+    to {
+        transform: translateX(0);
+        background-color: red;
+    }
+}
+
+@keyframes message-slide-in {
+    from {
+        transform: translateX(50vw);
+        background-color: white;
+    }
+    to {
+        transform: translateX(0);
+        background-color: green;
+    }
+}
+
+
+.bank__card{
+    height: 80vh;
+}

@@ -1,0 +1,8 @@
+<%= form_with model: bank, id: "bank_form" do |f| %>
+  <%= form_field_with_label(f, t(:'comun.nombre'), :name) %>
+  <%= form_field_with_label(f, t(:'banco.cuenta'), :account) %>
+
+  <%= bank_provider_select_field(bank, current_user) %>
+
+  <%= submit_bank_form(bank, f) %>
+<% end %>

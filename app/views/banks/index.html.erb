@@ -1,0 +1,16 @@
+<div class="grid grid-cols-2 bank__container">
+
+  <div class="py-2">
+    <%= render 'form', bank: @bank %>
+  </div>
+
+  <div>
+    <%= will_paginate @banks %>
+
+    <div id="banks" class="py-5 h-full">
+        <div class="overflow-auto bank__card">
+          <%= render @banks %>
+      </div>
+    </div>
+  </div>
+</div>

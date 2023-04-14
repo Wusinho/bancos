@@ -1,0 +1,20 @@
+<nav id="header" class="w-full z-30 top-10 py-1 bg-white shadow-lg border-b border-teal-500">
+  <div class="w-full flex items-center justify-between mt-0 px-6 py-2">
+
+    <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
+      <nav>
+        <ul class="md:flex items-center justify-between text-base text-teal-600 pt-4 md:pt-0">
+          <li><%= link_to "Home", root_path, class: navbar_links %></li>
+          <li><%= link_to 'Proveedores', providers_path, class: navbar_links %></li>
+          <li><%= link_to "Cuenta Bancaria", banks_path, class: navbar_links %></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
+      <div class="auth flex items-center w-full md:w-full">
+          <%= button_to "Salir", destroy_user_session_path, method: :delete, data: { turbo: "false" }, class: special_green_btn %>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -12,8 +12,12 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+      <%= navbar_if_signed_in %>
+        <%= turbo_frame_tag 'error_message' %>
+        <%= turbo_frame_tag 'message' %>
+      <div class="global__container h-full">
+        <%= yield %>
+      </div>
   </body>
+  <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </html>

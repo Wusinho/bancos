@@ -1,0 +1,10 @@
+<%= turbo_frame_tag 'message' do %>
+  <div data-controller="message" class="message px-3">
+    <div class="px-2">
+      <%= message %>
+    </div>
+    <%= link_to '','', data: {
+      controller: 'message'
+    },class: 'px-3' %>
+  </div>
+<% end %>
