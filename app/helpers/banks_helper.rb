@@ -4,7 +4,7 @@ module BanksHelper
     if bank.persisted?
       button_to(t(:'comun.actualizar'), banks_path(bank.id), class: special_green_btn)
     else
-      f.submit t(:'comun.crear', nombre: 'Cuenta Bancaria')
+      f.submit t(:'comun.crear', nombre: 'Cuenta Bancaria'), class: green_big_btn
     end
   end
 
