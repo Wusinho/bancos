@@ -4,14 +4,13 @@
     <%= render 'form', bank: @bank %>
   </div>
 
-  <div id="banks" class="py-5 h-full">
+  <div>
     <%= will_paginate @banks %>
-      <div class="overflow-auto bank__card">
-        <% @banks.each do |bank| %>
-          <%= render 'bank', bank: bank %>
-          <%= link_to 'Revisa tu Cuenta', bank_path(bank) %>
-        <% end %>
+
+    <div id="banks" class="py-5 h-full">
+        <div class="overflow-auto bank__card">
+          <%= render @banks %>
+      </div>
     </div>
   </div>
-
 </div>
