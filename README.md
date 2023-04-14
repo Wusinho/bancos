@@ -143,7 +143,7 @@ rails db:seed
 To set up the server put:
 
 ```bash
-rails s
+bin/dev
 ```
 
 Después de esto, puede abrir su navegador web favorito y copiar y pegar lo siguiente:

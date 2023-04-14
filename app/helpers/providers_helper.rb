@@ -2,7 +2,7 @@ module ProvidersHelper
   def provider_card(provider, show = false)
     content_tag :div, id: dom_id(provider), class: "flex-initial w-64 rounded overflow-hidden shadow-lg mb-2 p-4" do
       content_tag :div, class: "px-6 py-4" do
-        concat link_to(provider.name, provider_path(provider))
+        concat link_to(provider.name, provider_path(provider), class: "#{navbar_links} text-teal-600" )
         concat content_tag(:div, provider_information_list(provider, show), class: "flex items-center")
         end
       end

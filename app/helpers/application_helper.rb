@@ -44,7 +44,7 @@ module ApplicationHelper
   end
 
   def delete_btn
-    "fa-solid fa-trash"
+    "<i class='fa-solid fa-trash'></i>"
   end
 
   def select_css
