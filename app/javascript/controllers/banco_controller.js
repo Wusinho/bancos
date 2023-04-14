@@ -6,11 +6,11 @@ export default class extends Controller {
   connect() {
   }
   click(e){
-    let creador_submit = document.getElementById('submit_creador')
-    if (creador_submit.innerHTML === 'Crear proveedor y Banco') {
-      creador_submit.innerHTML = 'Crear solo Banco'
+    let provider_submit = document.getElementById('submit_creador')
+    if (provider_submit.innerHTML === 'Crear proveedor y Banco') {
+      provider_submit.innerHTML = 'Crear solo Banco'
     } else {
-      creador_submit.innerHTML = 'Crear proveedor y Banco'
+      provider_submit.innerHTML = 'Crear proveedor y Banco'
     }
   }
 

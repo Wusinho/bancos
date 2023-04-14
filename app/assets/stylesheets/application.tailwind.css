@@ -20,9 +20,9 @@
 
 .pagination * {
     @apply px-3 py-2 mx-2;
-    @apply text-gray-700 no-underline bg-white rounded-lg;
+    @apply text-green-600 no-underline bg-white rounded-lg;
 }
 
 .pagination a:hover {
-    @apply font-semibold text-gray-200 bg-gray-700;
+    @apply font-semibold text-green-600 bg-gray-700;
 }
