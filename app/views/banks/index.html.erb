@@ -5,8 +5,10 @@
   </div>
 
   <div id="banks" class="py-5">
-    <%= render @banks %>
+    <% @banks.each do |bank| %>
+      <%= render 'bank', bank: bank %>
+      <%= link_to 'Revisa tu Cuenta', bank_path(bank) %>
+    <% end %>
   </div>
-  <%#= will_paginate @banks %>
 
 </div>
