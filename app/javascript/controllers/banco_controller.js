@@ -6,12 +6,12 @@ export default class extends Controller {
   connect() {
   }
   click(e){
+    const checkbox = e.target.checked
     let provider_submit = document.getElementById('submit_creador')
-    if (provider_submit.innerHTML === 'Crear proveedor y Banco') {
+    if (checkbox) {
       provider_submit.innerHTML = 'Crear solo Banco'
     } else {
       provider_submit.innerHTML = 'Crear proveedor y Banco'
     }
   }
-
 }
