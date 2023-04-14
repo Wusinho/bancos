@@ -3,7 +3,7 @@
     <%= provider_card(@provider, true) %>
   <% end %>
   <%= button_to( t(:'comun.link_borrar'),provider_path(@provider.id), method: :delete, class: red_btn) %>
-  <%= link_to t(:'comun.link_retroceder'), providers_path, class: blue_btn %>
+  <%= link_to t(:'homepage.link_proveedores'), providers_path, class: blue_btn %>
 </div>
 
 <%= render @banks %>

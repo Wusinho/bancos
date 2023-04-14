@@ -12,7 +12,6 @@ class BanksController < ApplicationController
 
   def create
     @bank = Bank.new(bank_params)
-
     if @bank.save
       streams = []
       streams << turbo_stream.prepend('banks', partial: 'banks/bank', locals: { bank: @bank })
@@ -29,7 +28,6 @@ class BanksController < ApplicationController
 
   def update
     if @bank.update(bank_params)
-      debugger
       streams = []
       streams << turbo_stream.replace('message', partial: 'shared/message', locals: { message: "#{@bank.name} Updated"})
       streams << turbo_stream.replace("bank_edit_#{@bank.id}", partial: 'banks/bank',
