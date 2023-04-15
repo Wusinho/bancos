@@ -14,7 +14,7 @@ class BanksController < ApplicationController
     @bank = Bank.new(bank_params)
     if @bank.save
       streams = []
-      streams << turbo_stream.prepend('banks', partial: 'banks/bank', locals: { bank: @bank })
+      # streams << turbo_stream.prepend('banks', partial: 'banks/bank', locals: { bank: @bank })
       streams << turbo_stream.replace('bank_form', partial: 'banks/form', locals: { bank: Bank.new})
       streams << turbo_stream.replace('message', partial: 'shared/message', locals: { message: "#{@bank.name} created"})
 
